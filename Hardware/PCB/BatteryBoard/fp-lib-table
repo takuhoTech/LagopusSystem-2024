@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "Kicad_Akiyuki_Footprint")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Kicad_Akiyuki_Footprint/Kicad_Akiyuki_Footprint.pretty")(options "")(descr ""))
+)

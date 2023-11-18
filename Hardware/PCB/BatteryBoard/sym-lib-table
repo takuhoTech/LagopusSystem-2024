@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name "BQ25887")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/BQ25887/BQ25887.kicad_sym")(options "")(descr ""))
+  (lib (name "power_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/power_extlib/power_extlib.kicad_sym")(options "")(descr ""))
+  (lib (name "NJW4190M")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/NJW4190M/NJW4190M.kicad_sym")(options "")(descr ""))
+)
