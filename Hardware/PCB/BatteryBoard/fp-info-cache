@@ -1,4 +1,11 @@
-20753519909992370
+20770537211846958
+ASMDC300F_24-2
+ASMDC300F_24-2
+ASMDC030F-2
+Resettable Fuse
+0
+2
+2
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -318,6 +325,20 @@ Battery
 Battery_Panasonic_CR3032-VCN_Vertical_CircularHoles
 Panasonic CR-3032/VCN battery, https://industrial.panasonic.com/cdbs/www-data/pdf2/AAA4000/AAA4000D508.PDF
 battery CR-3032 coin cell vertical
+0
+2
+2
+Battery_extlib
+BatteryClip_Keystone_18500
+
+
+0
+6
+2
+Battery_extlib
+MS421R
+
+
 0
 2
 2
@@ -2225,6 +2246,20 @@ SW PUSH SMALL Tactile C&K
 0
 4
 2
+Button_Switch_THT_extlib
+NKK_SS-12SDP2
+
+
+0
+3
+3
+Button_Switch_THT_extlib
+RS_PRO_Slide_Switch_SPDT_3A_120VAC
+
+
+0
+3
+3
 Buzzer_Beeper
 Buzzer_12x9.5RM7.6
 Generic Buzzer, D12mm height 9.5mm with RM7.6mm
@@ -2376,6 +2411,13 @@ Buzzer_Beeper
 Speaker_CUI_CMR-1206S-67
 Speaker, 30mW, 300-7000Hz, IP67 face, 12x6x2,25mm, https://www.cuidevices.com/product/resource/cmr-12062s-67.pdf
 speaker CUI
+0
+2
+2
+CUHS20S30
+CUHS20S30
+CUHS20S40,H3F-2
+Schottky Diode
 0
 2
 2
@@ -46101,6 +46143,27 @@ Mini USB 2.0 Type B
 0
 9
 6
+Connector_USB_extlib
+USB_C_Receptacle_5077CR-16-SMC2-BK-TR
+
+
+0
+20
+17
+Connector_USB_extlib
+USB_C_Receptacle_GCT_USB4120-03-C
+
+
+0
+20
+17
+Connector_USB_extlib
+USB_C_Receptacle_Molex_2169890002
+
+2169890002 
+0
+18
+15
 Connector_Wago
 Wago_734-132_1x02_P3.50mm_Vertical
 Molex 734 Male header (for PCBs); Straight solder pin 1 x 1 mm, 734-132 , 2 Pins (http://www.farnell.com/datasheets/2157639.pdf), generated with kicad-footprint-generator
@@ -56908,6 +56971,13 @@ SMD Solder Jumper, 1x1.5mm Triangular Pads, 0.3mm gap, open, labeled with number
 solder jumper open
 0
 5
+3
+Jumper_extlib
+SolderJumper-3_Open_RoundedPad
+
+solder jumper open
+0
+3
 3
 Kicad_Akiyuki_Footprint
 2SK2880

@@ -1,3 +1,9 @@
 (fp_lib_table
   (lib (name "Kicad_Akiyuki_Footprint")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Kicad_Akiyuki_Footprint/Kicad_Akiyuki_Footprint.pretty")(options "")(descr ""))
+  (lib (name "CUHS20S30")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/CUHS20S30/CUHS20S30.pretty")(options "")(descr ""))
+  (lib (name "Jumper_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Jumper_extlib/Jumper_extlib.pretty")(options "")(descr ""))
+  (lib (name "Connector_USB_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Connector_USB_extlib/Connector_USB_extlib.pretty")(options "")(descr ""))
+  (lib (name "Battery_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Battery_extlib/Battery_extlib.pretty")(options "")(descr ""))
+  (lib (name "ASMDC300F_24-2")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/ASMDC300F_24-2/ASMDC300F_24-2.pretty")(options "")(descr ""))
+  (lib (name "Button_Switch_THT_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Button_Switch_THT_extlib/Button_Switch_THT_extlib.pretty")(options "")(descr ""))
 )
