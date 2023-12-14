@@ -1,4 +1,4 @@
-20770537211846958
+20772275200528403
 ASMDC300F_24-2
 ASMDC300F_24-2
 ASMDC030F-2
@@ -53408,6 +53408,13 @@ Heatsink, StoneCold HS
 heatsink
 0
 2
+1
+Heatsink_extlib
+Heatsink_15x11mm_11PB015
+
+
+0
+1
 1
 Inductor_SMD
 L_6.3x6.3_H3

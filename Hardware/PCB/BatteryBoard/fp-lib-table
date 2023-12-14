@@ -6,4 +6,5 @@
   (lib (name "Battery_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Battery_extlib/Battery_extlib.pretty")(options "")(descr ""))
   (lib (name "ASMDC300F_24-2")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/ASMDC300F_24-2/ASMDC300F_24-2.pretty")(options "")(descr ""))
   (lib (name "Button_Switch_THT_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Button_Switch_THT_extlib/Button_Switch_THT_extlib.pretty")(options "")(descr ""))
+  (lib (name "Heatsink_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Heatsink_extlib/Heatsink_extlib.pretty")(options "")(descr ""))
 )
