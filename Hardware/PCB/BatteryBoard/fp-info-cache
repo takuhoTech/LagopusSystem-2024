@@ -1,4 +1,4 @@
-20831866808595577
+20835275043133220
 ASMDC300F_24-2
 ASMDC300F_24-2
 ASMDC030F-2
@@ -76418,6 +76418,20 @@ TO-264-5 Vertical RM 3.81mm
 0
 5
 5
+Package_extlib
+SOIC-8_3.9x4.9mm_P1.27mm
+SOIC, 8 Pin (JEDEC MS-012AA, https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/soic_narrow-r/r_8.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOIC SO
+0
+9
+8
+Package_extlib
+VQFN-24-1EP_4x4mm_P0.5mm_EP2.45x2.45mm_ThermalVias
+VQFN, 24 Pin (http://www.ti.com/lit/ds/symlink/msp430f1101a.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
+VQFN NoLead
+0
+45
+25
 Potentiometer_SMD
 Potentiometer_ACP_CA6-VSMD_Vertical
 Potentiometer, vertical, ACP CA6-VSMD, http://www.acptechnologies.com/wp-content/uploads/2017/06/01-ACP-CA6.pdf
