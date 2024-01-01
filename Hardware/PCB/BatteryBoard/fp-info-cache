@@ -1,4 +1,4 @@
-20835275043133220
+20838683207028748
 ASMDC300F_24-2
 ASMDC300F_24-2
 ASMDC030F-2
@@ -50882,6 +50882,13 @@ CFP3 SOD-123W
 0
 2
 2
+Diode_SMD_extlib
+ESDA13P70-1U1M
+
+
+0
+2
+2
 Diode_THT
 D_5KPW_P7.62mm_Vertical_AnodeUp
 Diode, 5KPW series, Axial, Vertical, pin pitch=7.62mm, , length*diameter=9*8mm^2, , http://www.diodes.com/_files/packages/8686949.gif
@@ -58694,6 +58701,13 @@ Yellow 5381 Series LED
 0
 2
 2
+LOGO
+Logo_BatteryBoard
+
+
+0
+0
+0
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
