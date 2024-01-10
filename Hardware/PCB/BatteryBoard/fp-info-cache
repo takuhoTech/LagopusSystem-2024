@@ -1,4 +1,4 @@
-20838687691627642
+20845507220521683
 ASMDC300F_24-2
 ASMDC300F_24-2
 ASMDC030F-2
@@ -329,12 +329,40 @@ battery CR-3032 coin cell vertical
 2
 2
 Battery_extlib
+BatteryClip_Keystone_18350_Protected
+
+
+0
+6
+2
+Battery_extlib
 BatteryClip_Keystone_18500
 
 
 0
 6
 2
+Battery_extlib
+BatteryClip_Keystone_18500_Protected
+
+
+0
+6
+2
+Battery_extlib
+DC_Voltmeter
+
+
+0
+0
+0
+Battery_extlib
+DTP673450(PHR)
+
+
+0
+0
+0
 Battery_extlib
 MS421R
 
