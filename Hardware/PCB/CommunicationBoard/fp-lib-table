@@ -35,4 +35,5 @@
   (lib (name "Button_Switch_THT_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Button_Switch_THT_extlib/Button_Switch_THT_extlib.pretty")(options "")(descr ""))
   (lib (name "Button_Switch_SMD_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Button_Switch_SMD_extlib/Button_Switch_SMD_extlib.pretty")(options "")(descr ""))
   (lib (name "Package_DFN_QFN_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Package_DFN_QFN_extlib/Package_DFN_QFN_extlib.pretty")(options "")(descr ""))
+  (lib (name "LOGO")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/LOGO/LOGO.pretty")(options "")(descr ""))
 )
