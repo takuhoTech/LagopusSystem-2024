@@ -1,0 +1,5 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+J1,PinHeader_2x05_P1.27mm_Vertical_SMD,1,TWELITER,
+JP1,PinHeader_1x02_P2.54mm_Vertical,1,VCC,
+JP2,PinHeader_1x02_P2.54mm_Vertical,1,SET,
+U1,PinSocket_1x07_P2.54mm_Horizontal,1,TWELITE_R3,

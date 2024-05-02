@@ -1,0 +1,5 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+J1,PinHeader_2x05_P1.27mm_Vertical_SMD,1,SWD,
+J2,DIP-30_W15.24mm,1,AE-LPC11U35-MB,
+JP1,PinHeader_1x02_P2.54mm_Vertical,1,VCC,
+SW1,SW_PUSH_6mm_H4.3mm,1,SW_Push,

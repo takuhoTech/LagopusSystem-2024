@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "Boards_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/Boards_extlib/Boards_extlib.pretty")(options "")(descr ""))
+)

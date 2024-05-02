@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "Package_DIP_extlib")(type "KiCad")(uri "D:/GitHub/LagopusSystem-2024/Hardware/ExternalLib/Package_DIP_extlib/Package_DIP_extlib.pretty")(options "")(descr ""))
+)
