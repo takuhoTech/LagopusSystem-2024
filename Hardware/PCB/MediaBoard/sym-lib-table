@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name "MCU_Module_extlib")(type "KiCad")(uri "${KIPRJMOD}/../../ExternalLib/MCU_Module_extlib/MCU_Module_extlib.kicad_sym")(options "")(descr ""))
+  (lib (name "Amplifier_Audio_extlib")(type "KiCad")(uri "D:/GitHub/LagopusSystem-2024/Hardware/ExternalLib/Amplifier_Audio_extlib/Amplifier_Audio_extlib.kicad_sym")(options "")(descr ""))
 )

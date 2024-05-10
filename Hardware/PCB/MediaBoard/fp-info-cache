@@ -1,4 +1,4 @@
-20588764286765735
+20595561298460946
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -46101,6 +46101,27 @@ Mini USB 2.0 Type B
 0
 9
 6
+Connector_USB_extlib
+USB_C_Receptacle_5077CR-16-SMC2-BK-TR
+
+
+0
+20
+17
+Connector_USB_extlib
+USB_C_Receptacle_GCT_USB4120-03-C
+
+
+0
+20
+17
+Connector_USB_extlib
+USB_C_Receptacle_Molex_2169890002
+
+2169890002 
+0
+18
+15
 Connector_Wago
 Wago_734-132_1x02_P3.50mm_Vertical
 Molex 734 Male header (for PCBs); Straight solder pin 1 x 1 mm, 734-132 , 2 Pins (http://www.farnell.com/datasheets/2157639.pdf), generated with kicad-footprint-generator
@@ -58256,10 +58277,17 @@ ESP8266 WiFi microcontroller
 Module_extlib
 RaspberryPi-Pico
 
-
+RP2040
 0
 43
 43
+Module_extlib
+WisdPi_Tiny_RP2040
+
+
+0
+29
+29
 Motors
 Vybronics_VZ30C1T8219732L
 Vibration motor, 2.3-3.2V, 14000rpm, 0.7G, https://www.vybronics.com/wp-content/uploads/datasheet-files/Vybronics-VZ30C1T8219732L-datasheet.pdf
