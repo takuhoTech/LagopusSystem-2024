@@ -29,6 +29,9 @@ void CentralBLE::begin(int maxPrphConn, char *name)
     prphs[idx].conn_handle = BLE_CONN_HANDLE_INVALID; //Invalid all connection handle
     prphs[idx].bleuart.begin(); //All of BLE Central Uart Serivce
     prphs[idx].bleuart.setRxCallback(bleuart_rx_callback);
+    prphs[idx].CPS.begin();
+    prphs[idx].CPM.setNotifyCallback(notify_callback);
+    prphs[idx].CPM.begin();
   }
   Bluefruit.Central.setConnectCallback(connect_callback); //Callbacks for Central
   Bluefruit.Central.setDisconnectCallback(disconnect_callback);
@@ -104,7 +107,36 @@ void CentralBLE::scan_callback(ble_gap_evt_adv_report_t* report)
 
 void CentralBLE::connect_callback(uint16_t conn_handle)
 {
+  char buffer[16 + 1];
+  int id;
+  prph_info_t* peer;
 
+  Bluefruit.Connection(conn_handle)->getPeerName(buffer, sizeof(buffer) - 1);
+
+  for (id = 0; id < sizeof(prphs) / sizeof(prph_info_t); id++)
+  {
+    peer = &prphs[id]; //アドレス渡し
+    if ((!memcmp(buffer, peer->name, strlen(peer->name) + 1)) && (peer->conn_handle == BLE_CONN_HANDLE_INVALID))
+    { //終端NULLまで含めた名前の一致と,まだconn_handleが設定されていないことが条件(同姓同名対策)
+      peer->conn_handle = conn_handle;
+      break; //一致した時点でのidを以降使うためにbreak
+    }
+  }
+
+  if (peer->CPS.discover(conn_handle) && peer->CPM.discover()) //CPS
+  {
+    peer->CPM.enableNotify();
+  }
+  else if (peer->bleuart.discover(conn_handle)) //NUS
+  {
+    peer->bleuart.enableTXD();
+  }
+  else //No service found
+  {
+    Bluefruit.disconnect(conn_handle);
+  }
+
+  Bluefruit.Scanner.start(0);
 }
 
 void CentralBLE::disconnect_callback(uint16_t conn_handle, uint8_t reason) //実装済
@@ -119,6 +151,31 @@ void CentralBLE::disconnect_callback(uint16_t conn_handle, uint8_t reason) //実
 
   //Serial.print(prphs[id].name);
   //Serial.println(" disconnected!");
+}
+
+void CentralBLE::notify_callback(BLEClientCharacteristic * chr, uint8_t* data, uint16_t len)
+{
+  //timestamp = word(data[7], data[6]); //単位は1/2048[s]じゃないっぽい
+  //revolution = word(data[5], data[4]);
+  //power = word(data[3], data[2]);
+  //frag = word(data[1], data[0]);
+
+  uint16_t conn_handle = chr->connHandle();
+  int id = findConnHandle(conn_handle);
+  prph_info_t* peer = &prphs[id];
+
+  memcpy(peer->CPMpkt.bin, data, 8);
+
+  if (peer->CPMpkt.revolution > peer->CPMpktprev.revolution)
+  {
+    //cadence = 60.0 / ( ((timestamp - timestamp_last) / 1024.0) / (revolution - revolution_last) );
+    peer->cadence = 60 * 1024 * (peer->CPMpkt.revolution - peer->CPMpktprev.revolution) / (peer->CPMpkt.timestamp - peer->CPMpktprev.timestamp);
+  }
+
+  memcpy(peer->CPMpktprev.bin, peer->CPMpkt.bin, 8);
+
+  //timestamp_last = timestamp;
+  //revolution_last = revolution;
 }
 
 void CentralBLE::bleuart_rx_callback(BLEClientUart& uart_svc) //uart_svc is prphs[conn_handle].bleuart
@@ -183,6 +240,15 @@ String CentralBLE::readStringUntil(int ID, char terminator) //実装済
     delay(1);
   }
   return "error";
+}
+
+int16_t CentralBLE::getCyclingPower(int ID)
+{
+  return prphs[ID].CPMpkt.power;
+}
+uint16_t CentralBLE::getCyclingCadence(int ID)
+{
+  return prphs[ID].cadence;
 }
 
 int CentralBLE::findConnHandle(uint16_t conn_handle)  //実装済
