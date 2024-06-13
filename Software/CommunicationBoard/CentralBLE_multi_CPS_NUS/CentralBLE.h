@@ -54,6 +54,7 @@ typedef struct //Struct containing peripheral info
   uint16_t cadence;
 
 } prph_info_t;
-static prph_info_t prphs[BLE_MAX_CONNECTION];
+//static prph_info_t prphs[BLE_MAX_CONNECTION];
+static prph_info_t prphs[4];
 
 #endif

@@ -63,13 +63,14 @@ void CentralBLE::scan_callback(ble_gap_evt_adv_report_t* report)
     */
     if (Bluefruit.Scanner.parseReportByType(report, BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, buffer, sizeof(buffer)))
     {
-      /*
-        DEBUG_print("NAME : ");
-        for (int i = 0; i < sizeof(buffer); i++) {
-        DEBUG_print(char(buffer[i]));
-        }
-        DEBUG_println();
-      */
+
+      Serial.print("ScanResponce NAME : ");
+      for (int i = 0; i < sizeof(buffer); i++) {
+        Serial.print(char(buffer[i]));
+      }
+      Serial.println();
+
+
       for (int i = 0; i < sizeof(prphs) / sizeof(prph_info_t); i++)
       {
         if (!memcmp(buffer, prphs[i].name, strlen(prphs[i].name) + 1)) //終端NULLまで含めて比較
@@ -112,6 +113,9 @@ void CentralBLE::connect_callback(uint16_t conn_handle)
   prph_info_t* peer;
 
   Bluefruit.Connection(conn_handle)->getPeerName(buffer, sizeof(buffer) - 1);
+
+  Serial.print("Connected NAME : ");
+  Serial.println(buffer);
 
   for (id = 0; id < sizeof(prphs) / sizeof(prph_info_t); id++)
   {
