@@ -8,7 +8,7 @@
 CentralBLE SerialBLE;
 TMUX131 MUX;
 
-#define LEFTPWR  0
+#define LEFTPWR  0 //ASSIOMA33173U
 #define RIGHTPWR 1
 #define DISPLAY  2
 
@@ -18,13 +18,12 @@ void setup(void)
   //while (!Serial); yield();
 
   SerialBLE.addPrphName(LEFTPWR, "ASSIOMA33173U");
-  SerialBLE.addPrphName(RIGHTPWR, "PowerMeter");
+  SerialBLE.addPrphName(RIGHTPWR,"PowerMeter");
   SerialBLE.addPrphName(DISPLAY, "DISPLAY");
 
   SerialBLE.begin(3, "Central");
 
   MUX.EnableSender();
-  //MUX.EnableUSB();
 }
 
 union PACKET
@@ -53,8 +52,6 @@ union PACKET
 };
 PACKET packet;
 
-unsigned long LastTime = 0;
-
 void loop()
 {
   if (SerialBLE.isOpen(LEFTPWR))
@@ -63,7 +60,7 @@ void loop()
     packet.Cadence = SerialBLE.getCyclingCadence(LEFTPWR);
     packet.PowerAvg[LEFTPWR] = SerialBLE.getCyclingPower(LEFTPWR) * 2; //double power here
     packet.PowerMax[LEFTPWR] = 0;
-    packet.PowerBatt[LEFTPWR] = 100; //battery serviceを実装する。
+    packet.PowerBatt[LEFTPWR] = 0;
   }
   else
   {
@@ -77,7 +74,7 @@ void loop()
     packet.Cadence = PowerData->getItemAtIndex(0).toInt();
     packet.PowerAvg[RIGHTPWR] = PowerData->getItemAtIndex(1).toInt();
     packet.PowerMax[RIGHTPWR] = PowerData->getItemAtIndex(2).toInt();
-    packet.PowerBatt[RIGHTPWR] = 100; //電圧値を百分率に変換するか、パワメにbattery serviceを実装する。
+    packet.PowerBatt[RIGHTPWR] = PowerData->getItemAtIndex(3).toFloat();
   }
   else
   {
@@ -87,29 +84,26 @@ void loop()
   if (Serial.read() != -1)
   {
     MUX.EnableReceiver();
-    delay(50);
+    delay(10);
     Serial.write(packet.bin, sizeof(PACKET)); //36bytes
     Serial.flush();
-    delay(50);
     MUX.EnableSender();
   }
 
-  if ((SerialBLE.isOpen(DISPLAY)) && (millis() - LastTime > 1000))
+  if (SerialBLE.isOpen(DISPLAY))
   {
     String str = String(packet.Cadence);
     str += " ";
-    str += String(packet.PowerAvg[LEFTPWR]); //doubled
+    str += String(packet.PowerAvg[LEFTPWR]);
     str += " ";
-    str += String(packet.PowerBatt[LEFTPWR]); //battery serviceを実装するまでは0しか出ない、実装したらディスプレイ側に変更が必要
+    str += String(420);//int(packet.PowerMeterBat * 100.0)
     str += " ";
     str += String(0);//int(packet.AirSpeed * 100.0)
     str += " ";
-    str += String(packet.PitotBatt);
+    str += String(420);//int(packet.AirMeterBat * 100.0)
     str += ",";
     SerialBLE.print(DISPLAY, str.c_str());
-
-    LastTime = millis();
   }
 
-  //delay(10);
+  delay(1000);
 }
